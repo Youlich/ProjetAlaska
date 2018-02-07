@@ -1,4 +1,3 @@
-/** Dans cette vue, on affiche le billet (récupéré avec $post ) et les commentaires (récupérés dans $comments )**/
 
 <?php $title = htmlspecialchars($post['title']); ?>
 

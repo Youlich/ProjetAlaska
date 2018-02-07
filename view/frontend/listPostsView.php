@@ -1,26 +1,25 @@
-<?php $title = 'Mon blog'; ?>
-
 <?php ob_start(); ?>
 <h1>Billet simple pour l'Alaska</h1>
-<p>Voir mon dernier chapitre</p> <! à faire : lien permettant d'afficher le dernier chapitre>
+<p> <a href="lastChapter.php">Voir mon dernier chapitre</a>
+</p>
 
 
 <?php
 while ($data = $posts->fetch())
 {
 ?>
-    <div class="news">
+    <div class="post">
         <h3>
             <?= htmlspecialchars($data['title']) ?>
-
         </h3>
-        
+        <p>
+            <img src="<?php echo $data['image'];?>" />
+        </p>
+
         <p>
             <?= nl2br(htmlspecialchars($data['resum'])) ?>
             <br />
             <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Lire la suite</a></em>
-
-
         </p>
     </div>
 <?php

@@ -7,9 +7,15 @@
  */
 
 namespace model;
+require_once("DbConnect.php");
 
 
-class Image
+class ImageManager extends DbConnect
 {
+    public function addImage()
+    {
+
+        echo $data['image'];
+    }
 
 }
