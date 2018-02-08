@@ -13,7 +13,7 @@ while ($data = $posts->fetch())
             <?= htmlspecialchars($data['title']) ?>
         </h3>
         <p>
-            <img src="<?php echo $data['image'];?>" />
+            <img src="public/images/<?php echo $data['image'];?>" />
         </p>
 
         <p>
