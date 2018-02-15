@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-
-
-<link href="public/css/bootstrap.min.css" rel="stylesheet">
-<link href="public/css/style.css" rel="stylesheet">
+<head>
+    <link href="public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/css/style.css" rel="stylesheet">
+</head>
 <?php include ('templateHF.php');?>
 <header class="bg-primary text-white">
     <div class="container text-center">
