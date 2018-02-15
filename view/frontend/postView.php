@@ -1,50 +1,48 @@
-
-
-<?php $title = htmlspecialchars($post['title']); ?>
+<?php $title = htmlspecialchars($post->getTitle()); ?>
 
 <?php ob_start(); ?>
 
-<p><a href="Blog.php">Retour à la liste des chapitres</a></p>
+    <p><a href="Blog.php">Retour à la liste des chapitres</a></p>
 
-<div class="post">
-    <p>
-        <img src="public/images/<?php echo $post['image'];?>" />
-    </p>
-    <h3>
-        <?= htmlspecialchars($post['title']) ?>
-    </h3>
-    <p>
-        <?= nl2br(htmlspecialchars($post['content'])) ?>
-    </p>
-</div>
+    <div class="post">
+        <p>
+            <img src="public/images/<?php echo $post->getImage();?>" />
+        </p>
+        <h3>
+            <?= htmlspecialchars($post->getTitle()) ?>
+        </h3>
+        <p>
+            <?= nl2br(htmlspecialchars($post->getContent())) ?>
+        </p>
+    </div>
 
-<h2>Commentaires</h2>
+    <h2>Commentaires</h2>
 
-<form action="Blog.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
-    <div>
-        <label for="author">Auteur</label><br />
-        <input type="text" id="author" name="author" />
-    </div>
-    <div>
-        <label for="comment">Commentaire</label><br />
-        <textarea id="comment" name="comment"></textarea>
-    </div>
-    <div>
-        <input type="submit" />
-    </div>
-</form>
+    <form action="Blog.php?action=addComment&amp;id=<?= $post->getId() ?>" method="post">
+        <div>
+            <label for="author">Auteur</label><br />
+            <input type="text" id="author" name="author" />
+        </div>
+        <div>
+            <label for="comment">Commentaire</label><br />
+            <textarea id="comment" name="comment"></textarea>
+        </div>
+        <div>
+            <input type="submit" />
+        </div>
+    </form>
 
 <?php
 while ($comment = $comments->fetch())
 {
-?>
-    <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?> 
+    ?>
+    <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?>
 
-    (<a href="Blog.php?action=Comment&numComm=<?=$comment['id']?>">modifier</a>)
+        (<a href="Blog.php?action=Comment&numComm=<?=$comment['id']?>">modifier</a>)
 
 
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-<?php
+    <?php
 }
 ?>
 <?php $content = ob_get_clean(); ?>

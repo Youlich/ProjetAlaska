@@ -1,5 +1,7 @@
 <?php
 namespace model;
+use entity\Post;
+
 require_once("DbConnect.php");
 
 /**
@@ -11,16 +13,33 @@ class PostManager extends DbConnect
 {
     public function getPosts() // Affiche tous les billets (posts)
     {
+        $posts = array();
         $db = $this->dbConnect();
         $req = $db->query('SELECT id, title, resum, content, image, DATE_FORMAT(post_date, \'%d/%m/%Y à %Hh%imin%ss\') AS post_date_fr FROM posts ORDER BY post_date DESC LIMIT 0, 5');
-        return $req;
+        while ($data = $req->fetch())
+        {
+            $post = new Post();
+            $post->setTitle($data['title']);
+            $post->setImage($data['image']);
+            $post->setId($data['id']);
+            $post->setResum($data['resum']);
+            $posts[] = $post;
+        }
+        return $posts;
     }
     public function getPost($postId) // Permet de sélectionner un billet
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, title, resum, content, image, DATE_FORMAT(post_date, \'%d/%m/%Y à %Hh%imin%ss\') AS post_date_fr FROM posts WHERE id = ?');
         $req->execute(array($postId));
-        $post = $req->fetch();
+        while ($data = $req->fetch())
+        {
+            $post = new Post();
+            $post->setImage($data['image']);
+            $post->setTitle($data['title']);
+            $post->setContent($data['content']);
+            $posts[] = $post;
+        }
         return $post;
     }
 }
