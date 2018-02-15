@@ -1,0 +1,84 @@
+.html
+{
+    height : 100%;
+}
+body {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 13%;
+
+}
+/*templateHF.php*/
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/*listPostView.php*/
+.info {
+    padding-left: 1%;
+    color : grey;
+}
+.post {
+    clear: both;
+    padding-top: 3%;
+}
+.image {
+    float : left;
+}
+.bg-primary {
+    background-color: #007bff !important;
+}
+.btn {
+    background-color: #007bff !important;
+}
+
+/* Forteroche.php*/
+.photo {
+    padding-top: 12%;
+    float : left;
+    padding-left: 10%;
+    vertical-align : sub;
+}
+
+.message
+{
+    padding-top: 15%;
+    padding-right : 10%;
+}
+
+li{
+    list-style-type: none; /* enlève la numérotation des puces*/
+}
+
+/*templateBlog.php*/
+.bg-primary /*titre du livre dans blog*/
+{
+    padding-top: 8%;
+}
+
+h1
+{
+    text-align: center;
+}
+
+.contain
+{
+    padding-top: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+a
+{
+    font-weight: bold;
+    color : black;
+    }
+}
+
+/*Responsive*/
+@media screen and (max-width: 640px)
+{
+
+}

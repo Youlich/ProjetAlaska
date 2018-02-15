@@ -10,7 +10,7 @@ if (isset($_GET['success'])) {
 ?>
 <br></br>
 
-<form action="index.php?action=ModifComment&amp;numComm=<?= $comment['id'] ?>" method="post">
+<form action="Blog.php?action=ModifComment&amp;numComm=<?= $comment['id'] ?>" method="post">
 
     <div>
         
@@ -29,7 +29,7 @@ if (isset($_GET['success'])) {
     </div>
     <div>
          <p>
-        <a href="index.php?action=post&id=<?=$comment['post_id']; ?>">Retour vers la liste des commentaires du billet</a>
+        <a href="Blog.php?action=post&id=<?=$comment['post_id']; ?>">Retour vers la liste des commentaires du billet</a>
     </p>
     </div>
 </form>
@@ -38,4 +38,4 @@ if (isset($_GET['success'])) {
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('template.php'); ?>
+<?php require('templateBlog.php'); ?>
