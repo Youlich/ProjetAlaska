@@ -4,6 +4,7 @@
     <link href="public/css/bootstrap.min.css" rel="stylesheet">
     <link href="public/css/style.css" rel="stylesheet">
 </head>
+<body>
 <?php include ('templateHF.php');?>
 <header class="bg-primary text-white">
     <div class="container text-center">
@@ -16,5 +17,5 @@
 
     <?= $content; ?>
 </div>
-
+</body>
 </html>
